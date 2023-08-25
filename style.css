@@ -48,36 +48,40 @@ canvas#cvs.add-cell-by-click {
    border-radius: 5px;
    background: white;
    padding: 10px;
-   padding-bottom: 20px;
+   padding-bottom: 0;
 }
 #settings #openSettings {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    transform: translate(1px, -1px);
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: grid;
+   place-items: center;
+   font-size: 22px;
+   transform: translate(1px, -1px);
 }
 #settings.active #openSettings {
-    position: absolute;
-    opacity: 0;
-    left: -100vw;
-    top: -100vh;
-    width: 300vw;
-    height: 300vh;
-    z-index: -1;
+   position: absolute;
+   opacity: 0;
+   left: -100vw;
+   top: -100vh;
+   width: 300vw;
+   height: 300vh;
+   z-index: -1;
 }
 #settings #insetAll {
-    position: relative;
-    width: auto;
-    height: auto;
-    background: white;
-    scale: 0;
-    z-index: 2;
+   position: relative;
+   width: 0;
+   height: 0;
+   background: white;
+   z-index: 2;
+   opacity: 0;
+   transition: opacity linear 300ms;
+   overflow: hidden;
 }
 #settings.active #insetAll {
-    scale: 1;
+   opacity: 1;
+   width: auto;
+   height: auto;
 }
 #settings .big {
    font-size: 20px;
@@ -151,7 +155,7 @@ canvas#cvs.add-cell-by-click {
    border-radius: 5px;
    background: linear-gradient(335deg, #ff4d0077, #ffdd0077);
    cursor: pointer;
-   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
    border-bottom: solid 2px #ff440077;
    box-shadow: 1px 1px 2px #000000;
    transition: box-shadow ease-in-out 300ms;
@@ -265,9 +269,9 @@ canvas#cvs.add-cell-by-click {
    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 .input-box input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #b6b6b6;
-    box-shadow: inset 1px 1px 2px #00000077;
-    border: 1px solid #707070;
+   background: #b6b6b6;
+   box-shadow: inset 1px 1px 2px #00000077;
+   border: 1px solid #707070;
 }
 .input-box input[type="range"]::-moz-range-track {
    width: 100%;
@@ -324,4 +328,23 @@ canvas#cvs.add-cell-by-click {
 }
 .input-box input[type="range"]:focus::-ms-fill-upper {
    background: #b6b6b6;
+}
+/* ---------- copyright ------------ */
+#copyright {
+   margin: 10px;
+   text-align: end;
+   font-size: 14px;
+   font-family: "Open Sans", "Helvetica Neue",;
+   font-weight: 700;
+   animation: linear infinite copyr 10s;
+}
+
+@keyframes copyr {
+   0% {
+      color: transparent;
+   } 50% {
+      color: #0009;
+   } 100% {
+      color: transparent;
+   }
 }
