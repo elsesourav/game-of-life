@@ -70,8 +70,13 @@ inputSpeed.addEventListener("change", (e) => {
    ani.updateFPS(FPS);
 });
 
-openSettings.addEventListener("click", () => {
-   settings.classList.toggle("active");
-});
 
+
+document.addEventListener("click", (e) => {
+   if (e.target == openSettings || e.target.closest("#settings")) {
+      settings.classList.add("active");
+   } else {
+      settings.classList.remove("active");
+   }
+})
 
